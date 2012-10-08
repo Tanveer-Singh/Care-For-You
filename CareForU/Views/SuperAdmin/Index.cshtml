@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Index";
+
+}
+<h2>
+    Your are in SuperAdminstrator Mode @User.Identity.Name
+</h2>
+
+
+@foreach (var item in (string[])TempData["Users"])
+{
+    TempData.Keep("Users");
+    @item<p>
+        Role is
+    </p>
+}
+@{
+    var users = Roles.GetAllRoles();
+    var getallUsersonRoles = (string[])ViewData["AllUsers"];
+}
+<table>
+<tr>
+    <th>
+        Roles are -
+    </th>
+    </tr>
+    @foreach (var item in users)
+    {
+        <tr>
+            <td>@item
+            </td>
+            <td>@Html.ActionLink("Select", "GetUser",new { roleName = @item })
+            </td>
+        </tr>
+
+    }
+</table>
+
+@if (getallUsersonRoles != null)
+{
+        <table>
+        <tr>
+            <th>
+                Users are -
+            </th>
+        </tr>
+        @foreach (var item in getallUsersonRoles)
+    {
+            <tr>
+                <td>@item
+            </tr>
+
+    }
+    </table>
+
+     
+}

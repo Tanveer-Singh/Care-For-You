@@ -1,0 +1,30 @@
+﻿@model CareLib.Models.doctor
+@{
+    ViewBag.Title = "Details";
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#tabs").tabs();
+        });
+        
+    </script>
+}
+<h2>
+    Details</h2>
+<div class="box">
+    <div id="tabs">
+        <ul>
+            <li><a href="#doc-1"  >Personal Details</a></li>
+            <li><a href="#doc-2">Address</a></li>
+        </ul>
+        <div id="doc-1">
+            TEST1
+        </div>
+        <div id="doc-2">
+            TEST3
+        </div>
+    </div>
+</div>

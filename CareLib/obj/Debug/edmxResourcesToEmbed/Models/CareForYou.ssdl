@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CareForYouModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="CareForYouModelStoreContainer">
+    <EntitySet Name="CareCodeDefinations" EntityType="CareForYouModel.Store.CareCodeDefinations" store:Type="Tables" store:Schema="dbo" store:Name="CareCodeDefinations">
+      <DefiningQuery>SELECT 
+      [CareCodeDefinations].[CodeDefinationsid] AS [CodeDefinationsid], 
+      [CareCodeDefinations].[codeid] AS [codeid], 
+      [CareCodeDefinations].[codeDescriptions] AS [codeDescriptions], 
+      [CareCodeDefinations].[codeDetails] AS [codeDetails], 
+      [CareCodeDefinations].[IsDeleted] AS [IsDeleted]
+      FROM [dbo].[CareCodeDefinations] AS [CareCodeDefinations]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CareCodes" EntityType="CareForYouModel.Store.CareCodes" store:Type="Tables" store:Schema="dbo" store:Name="CareCodes">
+      <DefiningQuery>SELECT 
+      [CareCodes].[codeid] AS [codeid], 
+      [CareCodes].[codedesc] AS [codedesc], 
+      [CareCodes].[IsDeleted] AS [IsDeleted]
+      FROM [dbo].[CareCodes] AS [CareCodes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CompanyDetails" EntityType="CareForYouModel.Store.CompanyDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DoctorDetails" EntityType="CareForYouModel.Store.DoctorDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="doctors" EntityType="CareForYouModel.Store.doctors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HomeContent" EntityType="CareForYouModel.Store.HomeContent" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CareForYou.dbo.CareCodeDefinations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="CareCodeDefinations">
+    <Key>
+      <PropertyRef Name="CodeDefinationsid" />
+    </Key>
+    <Property Name="CodeDefinationsid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="codeid" Type="int" />
+    <Property Name="codeDescriptions" Type="varchar" MaxLength="200" />
+    <Property Name="codeDetails" Type="varchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CareForYou.dbo.CareCodes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="CareCodes">
+    <Key>
+      <PropertyRef Name="codeid" />
+    </Key>
+    <Property Name="codeid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="codedesc" Type="varchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="CompanyDetails">
+    <Key>
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="companyid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyTitle" Type="varchar" MaxLength="20" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="20" />
+    <Property Name="CompanyAddress" Type="varchar" MaxLength="200" />
+    <Property Name="CompanyAddress2" Type="varchar" MaxLength="200" />
+    <Property Name="CompanyState" Type="varchar" MaxLength="20" />
+    <Property Name="CompanyCountry" Type="varchar" MaxLength="20" />
+    <Property Name="CompanyZipCode" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="DoctorDetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="docid" Type="int" />
+    <Property Name="docDescription" Type="varchar" MaxLength="500" />
+    <Property Name="fbaccount" Type="varchar" MaxLength="100" />
+    <Property Name="googleacc" Type="varchar" MaxLength="100" />
+    <Property Name="twitteracc" Type="varchar" MaxLength="100" />
+    <Property Name="linkdn" Type="varchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="doctors">
+    <Key>
+      <PropertyRef Name="docid" />
+    </Key>
+    <Property Name="docid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DoctorName" Type="varchar" MaxLength="100" />
+    <Property Name="DoctorMiddleName" Type="varchar" MaxLength="100" />
+    <Property Name="DoctorLastName" Type="varchar" MaxLength="100" />
+    <Property Name="Dob" Type="date" />
+    <Property Name="sex" Type="varchar" MaxLength="1" />
+    <Property Name="DocPhoto" Type="varchar(max)" />
+    <Property Name="DocEmail" Type="varchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HomeContent">
+    <Key>
+      <PropertyRef Name="HomeID" />
+    </Key>
+    <Property Name="HomeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="HomeHeader" Type="varchar" MaxLength="30" />
+    <Property Name="HomeImage" Type="varchar(max)" />
+    <Property Name="HomeText" Type="varchar" MaxLength="300" />
+    <Property Name="HomeEmail" Type="varchar" MaxLength="30" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="HomeUrl" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>

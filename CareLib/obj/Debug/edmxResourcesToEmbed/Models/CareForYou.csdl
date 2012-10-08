@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CareForYouModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CareForYouEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CareCodeDefinations" EntityType="CareForYouModel.CareCodeDefination" />
+    <EntitySet Name="CareCodes" EntityType="CareForYouModel.CareCode" />
+    <EntitySet Name="DoctorDetails" EntityType="CareForYouModel.DoctorDetail" />
+    <EntitySet Name="doctors" EntityType="CareForYouModel.doctor" />
+    <EntitySet Name="HomeContents" EntityType="CareForYouModel.HomeContent" />
+    <EntitySet Name="CompanyDetails" EntityType="CareForYouModel.CompanyDetail" />
+  </EntityContainer>
+  <EntityType Name="CareCodeDefination">
+    <Key>
+      <PropertyRef Name="CodeDefinationsid" />
+    </Key>
+    <Property Name="CodeDefinationsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codeid" Type="Int32" />
+    <Property Name="codeDescriptions" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="codeDetails" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="IsDeleted" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CareCode">
+    <Key>
+      <PropertyRef Name="codeid" />
+    </Key>
+    <Property Name="codeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codedesc" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="IsDeleted" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DoctorDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="docid" Type="Int32" />
+    <Property Name="docDescription" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="fbaccount" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="googleacc" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="twitteracc" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="linkdn" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IsDeleted" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doctor">
+    <Key>
+      <PropertyRef Name="docid" />
+    </Key>
+    <Property Name="docid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DoctorName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DoctorMiddleName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DoctorLastName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Dob" Type="DateTime" />
+    <Property Name="sex" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="DocPhoto" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="DocEmail" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IsDeleted" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="HomeContent">
+    <Key>
+      <PropertyRef Name="HomeID" />
+    </Key>
+    <Property Name="HomeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HomeHeader" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="HomeImage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="HomeText" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="HomeEmail" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" />
+    <Property Type="String" Name="HomeUrl" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CompanyDetail">
+    <Key>
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Type="Int32" Name="companyid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CompanyTitle" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CompanyName" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CompanyAddress" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CompanyAddress2" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CompanyState" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CompanyCountry" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CompanyZipCode" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

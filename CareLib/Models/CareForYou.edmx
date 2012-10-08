@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CareForYouModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CareForYouModelStoreContainer">
+          <EntitySet Name="CareCodeDefinations" EntityType="CareForYouModel.Store.CareCodeDefinations" store:Type="Tables" store:Schema="dbo" store:Name="CareCodeDefinations">
+            <DefiningQuery>SELECT 
+      [CareCodeDefinations].[CodeDefinationsid] AS [CodeDefinationsid], 
+      [CareCodeDefinations].[codeid] AS [codeid], 
+      [CareCodeDefinations].[codeDescriptions] AS [codeDescriptions], 
+      [CareCodeDefinations].[codeDetails] AS [codeDetails], 
+      [CareCodeDefinations].[IsDeleted] AS [IsDeleted]
+      FROM [dbo].[CareCodeDefinations] AS [CareCodeDefinations]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CareCodes" EntityType="CareForYouModel.Store.CareCodes" store:Type="Tables" store:Schema="dbo" store:Name="CareCodes">
+            <DefiningQuery>SELECT 
+      [CareCodes].[codeid] AS [codeid], 
+      [CareCodes].[codedesc] AS [codedesc], 
+      [CareCodes].[IsDeleted] AS [IsDeleted]
+      FROM [dbo].[CareCodes] AS [CareCodes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CompanyDetails" EntityType="CareForYouModel.Store.CompanyDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DoctorDetails" EntityType="CareForYouModel.Store.DoctorDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="doctors" EntityType="CareForYouModel.Store.doctors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HomeContent" EntityType="CareForYouModel.Store.HomeContent" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CareForYou.dbo.CareCodeDefinations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="CareCodeDefinations">
+          <Key>
+            <PropertyRef Name="CodeDefinationsid" />
+          </Key>
+          <Property Name="CodeDefinationsid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codeid" Type="int" />
+          <Property Name="codeDescriptions" Type="varchar" MaxLength="200" />
+          <Property Name="codeDetails" Type="varchar" MaxLength="200" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CareForYou.dbo.CareCodes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="CareCodes">
+          <Key>
+            <PropertyRef Name="codeid" />
+          </Key>
+          <Property Name="codeid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codedesc" Type="varchar" MaxLength="200" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="CompanyDetails">
+          <Key>
+            <PropertyRef Name="companyid" />
+          </Key>
+          <Property Name="companyid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyTitle" Type="varchar" MaxLength="20" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="20" />
+          <Property Name="CompanyAddress" Type="varchar" MaxLength="200" />
+          <Property Name="CompanyAddress2" Type="varchar" MaxLength="200" />
+          <Property Name="CompanyState" Type="varchar" MaxLength="20" />
+          <Property Name="CompanyCountry" Type="varchar" MaxLength="20" />
+          <Property Name="CompanyZipCode" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DoctorDetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="docid" Type="int" />
+          <Property Name="docDescription" Type="varchar" MaxLength="500" />
+          <Property Name="fbaccount" Type="varchar" MaxLength="100" />
+          <Property Name="googleacc" Type="varchar" MaxLength="100" />
+          <Property Name="twitteracc" Type="varchar" MaxLength="100" />
+          <Property Name="linkdn" Type="varchar" MaxLength="100" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="doctors">
+          <Key>
+            <PropertyRef Name="docid" />
+          </Key>
+          <Property Name="docid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorName" Type="varchar" MaxLength="100" />
+          <Property Name="DoctorMiddleName" Type="varchar" MaxLength="100" />
+          <Property Name="DoctorLastName" Type="varchar" MaxLength="100" />
+          <Property Name="Dob" Type="date" />
+          <Property Name="sex" Type="varchar" MaxLength="1" />
+          <Property Name="DocPhoto" Type="varchar(max)" />
+          <Property Name="DocEmail" Type="varchar" MaxLength="100" />
+          <Property Name="IsDeleted" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="HomeContent">
+          <Key>
+            <PropertyRef Name="HomeID" />
+          </Key>
+          <Property Name="HomeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HomeHeader" Type="varchar" MaxLength="30" />
+          <Property Name="HomeImage" Type="varchar(max)" />
+          <Property Name="HomeText" Type="varchar" MaxLength="300" />
+          <Property Name="HomeEmail" Type="varchar" MaxLength="30" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="HomeUrl" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CareForYouModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CareForYouEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CareCodeDefinations" EntityType="CareForYouModel.CareCodeDefination" />
+          <EntitySet Name="CareCodes" EntityType="CareForYouModel.CareCode" />
+          <EntitySet Name="DoctorDetails" EntityType="CareForYouModel.DoctorDetail" />
+          <EntitySet Name="doctors" EntityType="CareForYouModel.doctor" />
+          <EntitySet Name="HomeContents" EntityType="CareForYouModel.HomeContent" />
+          <EntitySet Name="CompanyDetails" EntityType="CareForYouModel.CompanyDetail" />
+        </EntityContainer>
+        <EntityType Name="CareCodeDefination">
+          <Key>
+            <PropertyRef Name="CodeDefinationsid" />
+          </Key>
+          <Property Name="CodeDefinationsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codeid" Type="Int32" />
+          <Property Name="codeDescriptions" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="codeDetails" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CareCode">
+          <Key>
+            <PropertyRef Name="codeid" />
+          </Key>
+          <Property Name="codeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codedesc" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DoctorDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="docid" Type="Int32" />
+          <Property Name="docDescription" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="fbaccount" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="googleacc" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="twitteracc" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="linkdn" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="doctor">
+          <Key>
+            <PropertyRef Name="docid" />
+          </Key>
+          <Property Name="docid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DoctorMiddleName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DoctorLastName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Dob" Type="DateTime" />
+          <Property Name="sex" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="DocPhoto" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="DocEmail" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="HomeContent">
+          <Key>
+            <PropertyRef Name="HomeID" />
+          </Key>
+          <Property Name="HomeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HomeHeader" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="HomeImage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="HomeText" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="HomeEmail" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" />
+          <Property Type="String" Name="HomeUrl" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CompanyDetail">
+          <Key>
+            <PropertyRef Name="companyid" />
+          </Key>
+          <Property Type="Int32" Name="companyid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CompanyTitle" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyName" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyAddress" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyAddress2" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyState" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyCountry" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyZipCode" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CareForYouModelStoreContainer" CdmEntityContainer="CareForYouEntities">
+          <EntitySetMapping Name="CareCodeDefinations"><EntityTypeMapping TypeName="CareForYouModel.CareCodeDefination"><MappingFragment StoreEntitySet="CareCodeDefinations">
+            <ScalarProperty Name="CodeDefinationsid" ColumnName="CodeDefinationsid" />
+            <ScalarProperty Name="codeid" ColumnName="codeid" />
+            <ScalarProperty Name="codeDescriptions" ColumnName="codeDescriptions" />
+            <ScalarProperty Name="codeDetails" ColumnName="codeDetails" />
+            <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CareCodes"><EntityTypeMapping TypeName="CareForYouModel.CareCode"><MappingFragment StoreEntitySet="CareCodes">
+            <ScalarProperty Name="codeid" ColumnName="codeid" />
+            <ScalarProperty Name="codedesc" ColumnName="codedesc" />
+            <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DoctorDetails"><EntityTypeMapping TypeName="CareForYouModel.DoctorDetail"><MappingFragment StoreEntitySet="DoctorDetails">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="docid" ColumnName="docid" />
+            <ScalarProperty Name="docDescription" ColumnName="docDescription" />
+            <ScalarProperty Name="fbaccount" ColumnName="fbaccount" />
+            <ScalarProperty Name="googleacc" ColumnName="googleacc" />
+            <ScalarProperty Name="twitteracc" ColumnName="twitteracc" />
+            <ScalarProperty Name="linkdn" ColumnName="linkdn" />
+            <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="doctors"><EntityTypeMapping TypeName="CareForYouModel.doctor"><MappingFragment StoreEntitySet="doctors">
+            <ScalarProperty Name="docid" ColumnName="docid" />
+            <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+            <ScalarProperty Name="DoctorMiddleName" ColumnName="DoctorMiddleName" />
+            <ScalarProperty Name="DoctorLastName" ColumnName="DoctorLastName" />
+            <ScalarProperty Name="Dob" ColumnName="Dob" />
+            <ScalarProperty Name="sex" ColumnName="sex" />
+            <ScalarProperty Name="DocPhoto" ColumnName="DocPhoto" />
+            <ScalarProperty Name="DocEmail" ColumnName="DocEmail" />
+            <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+            <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="HomeContents"><EntityTypeMapping TypeName="CareForYouModel.HomeContent"><MappingFragment StoreEntitySet="HomeContent">
+            <ScalarProperty Name="HomeUrl" ColumnName="HomeUrl" />
+                <ScalarProperty Name="HomeID" ColumnName="HomeID" />
+            <ScalarProperty Name="HomeHeader" ColumnName="HomeHeader" />
+            <ScalarProperty Name="HomeImage" ColumnName="HomeImage" />
+            <ScalarProperty Name="HomeText" ColumnName="HomeText" />
+            <ScalarProperty Name="HomeEmail" ColumnName="HomeEmail" />
+            <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+            <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CompanyDetails">
+            <EntityTypeMapping TypeName="CareForYouModel.CompanyDetail">
+              <MappingFragment StoreEntitySet="CompanyDetails">
+                <ScalarProperty Name="CompanyZipCode" ColumnName="CompanyZipCode" />
+                <ScalarProperty Name="CompanyCountry" ColumnName="CompanyCountry" />
+                <ScalarProperty Name="CompanyState" ColumnName="CompanyState" />
+                <ScalarProperty Name="CompanyAddress2" ColumnName="CompanyAddress2" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyTitle" ColumnName="CompanyTitle" />
+                <ScalarProperty Name="companyid" ColumnName="companyid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CareForYou">
+        <EntityTypeShape EntityType="CareForYouModel.CareCodeDefination" Width="1.5" PointX="0.75" PointY="0.75" Height="1.7566536458333331" IsExpanded="true" />
+        <EntityTypeShape EntityType="CareForYouModel.CareCode" Width="1.5" PointX="2.75" PointY="0.75" Height="1.4279589843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CareForYouModel.DoctorDetail" Width="1.5" PointX="0.75" PointY="3.75" Height="2.2496956380208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="CareForYouModel.doctor" Width="1.5" PointX="2.75" PointY="3.75" Height="2.5783902994791656" IsExpanded="true" />
+        <EntityTypeShape EntityType="CareForYouModel.HomeContent" Width="1.5" PointX="4.75" PointY="0.75" Height="2.0853483072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="CareForYouModel.CompanyDetail" Width="1.5" PointX="5.375" PointY="3.75" Height="2.2496956380208322" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

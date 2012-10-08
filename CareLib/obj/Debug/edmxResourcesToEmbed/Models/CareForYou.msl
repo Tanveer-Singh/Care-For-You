@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CareForYouModelStoreContainer" CdmEntityContainer="CareForYouEntities">
+    <EntitySetMapping Name="CareCodeDefinations">
+      <EntityTypeMapping TypeName="CareForYouModel.CareCodeDefination">
+        <MappingFragment StoreEntitySet="CareCodeDefinations">
+          <ScalarProperty Name="CodeDefinationsid" ColumnName="CodeDefinationsid" />
+          <ScalarProperty Name="codeid" ColumnName="codeid" />
+          <ScalarProperty Name="codeDescriptions" ColumnName="codeDescriptions" />
+          <ScalarProperty Name="codeDetails" ColumnName="codeDetails" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CareCodes">
+      <EntityTypeMapping TypeName="CareForYouModel.CareCode">
+        <MappingFragment StoreEntitySet="CareCodes">
+          <ScalarProperty Name="codeid" ColumnName="codeid" />
+          <ScalarProperty Name="codedesc" ColumnName="codedesc" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoctorDetails">
+      <EntityTypeMapping TypeName="CareForYouModel.DoctorDetail">
+        <MappingFragment StoreEntitySet="DoctorDetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="docid" ColumnName="docid" />
+          <ScalarProperty Name="docDescription" ColumnName="docDescription" />
+          <ScalarProperty Name="fbaccount" ColumnName="fbaccount" />
+          <ScalarProperty Name="googleacc" ColumnName="googleacc" />
+          <ScalarProperty Name="twitteracc" ColumnName="twitteracc" />
+          <ScalarProperty Name="linkdn" ColumnName="linkdn" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doctors">
+      <EntityTypeMapping TypeName="CareForYouModel.doctor">
+        <MappingFragment StoreEntitySet="doctors">
+          <ScalarProperty Name="docid" ColumnName="docid" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="DoctorMiddleName" ColumnName="DoctorMiddleName" />
+          <ScalarProperty Name="DoctorLastName" ColumnName="DoctorLastName" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="DocPhoto" ColumnName="DocPhoto" />
+          <ScalarProperty Name="DocEmail" ColumnName="DocEmail" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomeContents">
+      <EntityTypeMapping TypeName="CareForYouModel.HomeContent">
+        <MappingFragment StoreEntitySet="HomeContent">
+          <ScalarProperty Name="HomeUrl" ColumnName="HomeUrl" />
+          <ScalarProperty Name="HomeID" ColumnName="HomeID" />
+          <ScalarProperty Name="HomeHeader" ColumnName="HomeHeader" />
+          <ScalarProperty Name="HomeImage" ColumnName="HomeImage" />
+          <ScalarProperty Name="HomeText" ColumnName="HomeText" />
+          <ScalarProperty Name="HomeEmail" ColumnName="HomeEmail" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyDetails">
+      <EntityTypeMapping TypeName="CareForYouModel.CompanyDetail">
+        <MappingFragment StoreEntitySet="CompanyDetails">
+          <ScalarProperty Name="CompanyZipCode" ColumnName="CompanyZipCode" />
+          <ScalarProperty Name="CompanyCountry" ColumnName="CompanyCountry" />
+          <ScalarProperty Name="CompanyState" ColumnName="CompanyState" />
+          <ScalarProperty Name="CompanyAddress2" ColumnName="CompanyAddress2" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyTitle" ColumnName="CompanyTitle" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

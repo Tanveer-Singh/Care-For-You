@@ -1,0 +1,13 @@
+D:\Repository\CareForYou\CareForU\bin\CareForU.dll
+D:\Repository\CareForYou\CareForU\bin\CareForU.pdb
+D:\Repository\CareForYou\CareForU\bin\CareLib.dll
+D:\Repository\CareForYou\CareForU\bin\EntityFramework.dll
+D:\Repository\CareForYou\CareForU\bin\Microsoft.Web.Infrastructure.dll
+D:\Repository\CareForYou\CareForU\bin\System.Web.Mvc.dll
+D:\Repository\CareForYou\CareForU\bin\WebActivator.dll
+D:\Repository\CareForYou\CareForU\bin\CareLib.pdb
+D:\Repository\CareForYou\CareForU\bin\EntityFramework.xml
+D:\Repository\CareForYou\CareForU\bin\System.Web.Mvc.xml
+D:\Repository\CareForYou\CareForU\obj\Debug\ResolveAssemblyReference.cache
+D:\Repository\CareForYou\CareForU\obj\Debug\CareForU.dll
+D:\Repository\CareForYou\CareForU\obj\Debug\CareForU.pdb

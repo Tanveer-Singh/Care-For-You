@@ -1,0 +1,74 @@
+﻿@model CareLib.Models.HomeContent
+@{
+    ViewBag.Title = "Create Content For Homepage";
+}
+@section scripts
+{
+    @CareForYouHelpers.ScriptsHelper("jquery.validate.min.js", Url)
+    @CareForYouHelpers.ScriptsHelper("jquery.validate.unobtrusive.min.js", Url)
+}
+<h3>@ViewBag.Title</h3>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>HomeContent</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeHeader)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeHeader)
+            @Html.ValidationMessageFor(model => model.HomeHeader)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeImage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeImage)
+            @Html.ValidationMessageFor(model => model.HomeImage)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeText)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeText)
+            @Html.ValidationMessageFor(model => model.HomeText)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeEmail)
+            @Html.ValidationMessageFor(model => model.HomeEmail)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeUrl)
+            @Html.ValidationMessageFor(model => model.HomeUrl)
+        </div>
+        @*  <div class="editor-label">
+            @Html.LabelFor(model => model.IsDeleted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDeleted)
+            @Html.ValidationMessageFor(model => model.IsDeleted)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedDate)
+            @Html.ValidationMessageFor(model => model.CreatedDate)
+        </div>*@
+        <p>
+            <input type="submit" value="Create" style="background-image: url('http://localhost:4448/Content/oceania/images/submit.jpg');
+                background-repeat: no-repeat; height: 35px; width: 120px; text-indent: -9999px;" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

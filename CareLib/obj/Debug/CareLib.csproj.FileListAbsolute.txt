@@ -1,0 +1,6 @@
+D:\Repository\CareForYou\CareLib\bin\Debug\CareLib.dll.config
+D:\Repository\CareForYou\CareLib\bin\Debug\CareLib.dll
+D:\Repository\CareForYou\CareLib\bin\Debug\CareLib.pdb
+D:\Repository\CareForYou\CareLib\obj\Debug\ResolveAssemblyReference.cache
+D:\Repository\CareForYou\CareLib\obj\Debug\CareLib.dll
+D:\Repository\CareForYou\CareLib\obj\Debug\CareLib.pdb

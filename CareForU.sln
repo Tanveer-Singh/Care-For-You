@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Web Developer Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareForU", "CareForU\CareForU.csproj", "{23B56F83-524C-4982-85A8-8323A7992C87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareLib", "CareLib\CareLib.csproj", "{6DB6E713-CB08-4482-8C6F-F7A18E6A4356}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23B56F83-524C-4982-85A8-8323A7992C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B56F83-524C-4982-85A8-8323A7992C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B56F83-524C-4982-85A8-8323A7992C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B56F83-524C-4982-85A8-8323A7992C87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB6E713-CB08-4482-8C6F-F7A18E6A4356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB6E713-CB08-4482-8C6F-F7A18E6A4356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB6E713-CB08-4482-8C6F-F7A18E6A4356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB6E713-CB08-4482-8C6F-F7A18E6A4356}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

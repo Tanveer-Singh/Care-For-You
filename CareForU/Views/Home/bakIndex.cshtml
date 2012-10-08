@@ -1,0 +1,87 @@
+﻿@model List<CareLib.Models.HomeContent>
+@{
+    ViewBag.Title = "Home Page";
+}
+@*<h2>@ViewBag.Message</h2>*@
+@for (int i = 0; i < @Model.Count(); i++)
+{
+    if (i == 0)
+    {
+    <div class="box">
+        <h3>@Model[i].HomeHeader</h3>
+        <span class="picture">
+            <img src="@Url.Content("~/Content/oceania/images/happy-at-home.jpg")" alt="careforyou" />
+        </span>
+        <p>
+            Did you know that 90% of Americans want to age in place - at home? Now more than
+            ever, medical experts agree that aging in place is the best choice. It’s healthier.
+            It’s more flexible. It’s also more affordable than assisted living . . .
+        </p>
+    </div>
+
+         
+    }
+    else if (i == 1)
+    {
+    <div class="box">
+        <h3>
+            Care For You</h3>
+        <p>
+            Care For You is a small team of care professionals committed to providing quality
+            one-to-one care with heart. Care For You has built its service around the needs
+            of each and every client. it listens to and consults with its clients and their
+            families, the Care Team, and the wider care community.
+        </p>
+    </div>
+
+
+    <div class="text">
+        <span class="picture">
+            <img src="@Url.Content("~/Content/oceania/images/image-1.jpg")" alt="careforyou" />
+        </span>
+    </div>
+
+
+    }
+    else
+    {
+    <div class="box">
+        <h3>
+            The Details
+        </h3>
+        <img src="@Url.Content("~/Content/oceania/images/468_banner.gif")" alt="Alternate Text" />
+        <p>
+            The Shepherd Centre - Atlanta, Georgia, USA Just over 2 years ago Di Cray and Ric
+            Martin visited the Shepherd Centre in Atalnta, Georgia, USA. Shepherd Center is
+            one of the top rehabilitation hospitals in the world, specializing in medical treatment,
+            research and rehabilitation for people with spinal cord injury or brain injury.
+            We spent a week within the Shepherd Centre hospital / rehab facility touring and
+            and meeting staff, clients and benefactors. It was nothing short of amazing - all
+            of it. We were also provided with information, manuals and books that simply do
+            not exist in Australia - specifically dealing with SCI rehab, disharge and post
+            discharge personal care etc. The Shepherd Centre in its own right is a powerful
+            source of information and here is a link for you to explore. <a href="www.shepherd.org">
+                Shepherd Spince Care</a>
+        </p>
+        <ul class="list">
+            <li class="first"><a href="#">Through October 31, 2012, you can signup for medical care
+                through our service.</a></li>
+            <li><a href="#">By taking advantage of the Early Adopter Program now, your service rate
+                will be discounted for the first year of service. </a></li>
+            @* <li><a href="#">Our highly skilled team of caring, professionally trained medical providers
+            will be able to offer top notch medical care.</a></li>
+        <li class="last"><a href="#">Anyone can signup and this exciting offer is available
+            for a limited time only, so take advantage of this unique offer today.</a></li>*@
+        </ul>
+        <p>
+            * Dependents age 7 and older must be accompanied by Adult/Guardian.
+            <br />
+            ** All savings based on yearly pricing at regular rate.
+            <br />
+            *** Health insurance is not required nor accepted for this service
+        </p>
+    </div>
+ 
+    }
+
+}

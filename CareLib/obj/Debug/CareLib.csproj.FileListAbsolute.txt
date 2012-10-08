@@ -4,3 +4,9 @@ D:\Repository\CareForYou\CareLib\bin\Debug\CareLib.pdb
 D:\Repository\CareForYou\CareLib\obj\Debug\ResolveAssemblyReference.cache
 D:\Repository\CareForYou\CareLib\obj\Debug\CareLib.dll
 D:\Repository\CareForYou\CareLib\obj\Debug\CareLib.pdb
+D:\Repository\Care-For-You\CareLib\bin\Debug\CareLib.dll.config
+D:\Repository\Care-For-You\CareLib\bin\Debug\CareLib.dll
+D:\Repository\Care-For-You\CareLib\bin\Debug\CareLib.pdb
+D:\Repository\Care-For-You\CareLib\obj\Debug\ResolveAssemblyReference.cache
+D:\Repository\Care-For-You\CareLib\obj\Debug\CareLib.dll
+D:\Repository\Care-For-You\CareLib\obj\Debug\CareLib.pdb

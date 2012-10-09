@@ -44,7 +44,15 @@ html { height: 100% } body { height: 100%; margin: 0px; padding: 0px } #map_canv
 { height: 80% }
 }
 <div id="address" style="float: left; width: 300px; height: 400px">
-    <strong>Care For You Address</strong>
+    <strong>Care For You Address</strong><br />
+       Company Name   :-@Model.CompanyName <br />
+       Company Address:-@Model.CompanyAddress  @Model.CompanyAddress2  @Model.CompanyState-@Model.CompanyZipCode<br />
+       @Model.CompanyCountry
+
+       <br />
+       <br />
+      You May Contant @Html.ActionLink(@Model.CompanyName, "ContantUs") here
+
 
 </div>
 <div id="map_canvas" style="float: right; width: 450px; height: 300px">    

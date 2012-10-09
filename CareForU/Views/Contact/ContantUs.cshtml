@@ -1,0 +1,23 @@
+﻿@*calling contact us partial
+
+@Html.Partial("_ContantUs")
+*@
+
+
+@model CareLib.Models.CompanyDetail
+@{
+    ViewBag.Title = "ContantUs";
+}
+@section scripts{
+    @CareForYouHelpers.ScriptsHelper("jquery.validate.min.js",Url)
+    @CareForYouHelpers.ScriptsHelper("jquery.validate.unobtrusive.min.js",Url)
+}
+<h2>
+    ContantUs</h2>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel("ContantUsEdit")
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

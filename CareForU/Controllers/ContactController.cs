@@ -21,5 +21,16 @@ namespace CareForU.Controllers
             return View(_homeDB.getCompanyDetails());
         }
 
+        public ActionResult ContantUs()
+        {
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_ContantUs");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

@@ -225,13 +225,18 @@
     <Content Include="Views\Doctor\Details.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\SuperAdmin\Index.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Contact\_ContantUs.cshtml" />
+    <Content Include="Views\Contact\EditorTemplates\ContantUsEdit.cshtml" />
+    <Content Include="Views\Contact\ContantUs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -262,7 +267,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>4448</DevelopmentServerPort>
+          <DevelopmentServerPort>2713</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:4448/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

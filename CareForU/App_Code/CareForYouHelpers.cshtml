@@ -1,33 +1,40 @@
 ﻿@using System.Web.Mvc;
-
 @helper fbpic(string fbacc)
     {
-    if (!string.IsNullOrEmpty(fbacc))
-    {
+        if (!string.IsNullOrEmpty(fbacc))
+        {
     <span><a href="@fbacc" target="_blank">
         <img src="../Images/fb.jpeg" alt="" /></a></span>
-    }
+        }
 }
-
 @helper linkdnpic(string linkdn)
     {
         if (!string.IsNullOrEmpty(linkdn))
-    {
+        {
     <span><a href="@linkdn" target="_blank">
         <img src="../Images/linkedin.png" alt="" /></a></span>
-    }
+        }
 }
-
 @helper twitterpic(string twitteracc)
     {
-    if (!string.IsNullOrEmpty(twitteracc))
-    {
+        if (!string.IsNullOrEmpty(twitteracc))
+        {
     <span><a href="@twitteracc)" target="_blank">
         <img src="../Images/twiiter.jpeg" alt="" /></a></span>
-    }
+        }
 }
-
-@helper ScriptsHelper(string ScriptName,UrlHelper url)
-{
-     <script src="@url.Content("~/Scripts/"+ @ScriptName)" type="text/javascript"></script>
+@helper ScriptsHelper(string ScriptName, UrlHelper url)
+    {
+    <script src="@url.Content("~/Scripts/" + @ScriptName)" type="text/javascript"></script>
+}
+@helper EmailCheck(string Email)
+    {
+    if (!string.IsNullOrEmpty(Email))
+    {
+        <span>Email</span>
+    }
+    else
+    {
+    <span style="font-size: medium; font-weight: bold; color: #FF0000">Not Available</span>
+    }
 }

@@ -76,6 +76,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\GridViewController.cs" />
     <Compile Include="Controllers\HomeContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
@@ -117,6 +118,7 @@
     <Content Include="Content\redmond\Images\ui-icons_f9bd01_256x240.png" />
     <Content Include="Content\redmond\jquery-ui-1.8.24.custom.css" />
     <Content Include="Content\redmond\jquery-ui.css" />
+    <Content Include="Content\StaticHeader.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -207,6 +209,9 @@
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\MyScript.js" />
+    <Content Include="Scripts\x.js" />
+    <Content Include="Scripts\xtableheaderfixed.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
@@ -237,6 +242,7 @@
     <Content Include="Views\Contact\_ContantUs.cshtml" />
     <Content Include="Views\Contact\EditorTemplates\ContantUsEdit.cshtml" />
     <Content Include="Views\Contact\ContantUs.cshtml" />
+    <Content Include="Views\GridView\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

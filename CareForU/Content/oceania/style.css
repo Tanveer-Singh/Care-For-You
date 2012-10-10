@@ -341,3 +341,7 @@ input[type="submit"] {
 .validation-summary-valid {
     display: none;
 }
+.clickable{
+    cursor: pointer;
+    background: #ffff99;
+}

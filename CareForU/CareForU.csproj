@@ -181,6 +181,7 @@
     <Content Include="Images\fb.jpeg" />
     <Content Include="Images\Joan.jpg" />
     <Content Include="Images\linkedin.png" />
+    <Content Include="Images\loader.gif" />
     <Content Include="Images\mail.png" />
     <Content Include="Images\nophoto.jpg" />
     <Content Include="Images\twiiter.jpeg" />

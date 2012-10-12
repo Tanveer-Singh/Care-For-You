@@ -52,7 +52,7 @@
     Index</h2>
 @* <div style =" background-color:#E8E8E8;  
         height:40px;width:500px; margin:0;padding:0">*@
-<table cellspacing="0" cellpadding="0" rules="all" border="1" id="tblHeader" class="header"
+@*<table cellspacing="0" cellpadding="0" rules="all" border="1" id="tblHeader" class="header"
     style="height: 50px; margin-top: -5px; z-index: 1; position: absolute;">
     <tr>
         <td style="width: 215px; text-align: center">
@@ -67,51 +67,56 @@
         <td style="width: 60px; text-align: center">
         </td>
     </tr>
-</table>
-<div style="height: 120px; width: 540px; overflow: auto;">    </div>
-    @*<div id='table-container'>*@
-    @grid.GetHtml(htmlAttributes: new { id = "gvTheGrid" },
+</table>*@
+
+<div style="height: 120px; width: 540px; overflow: auto;">
+</div>
+@*<div id='table-container'>*@
+@grid.GetHtml(htmlAttributes: new { id = "gvTheGrid" },
 tableStyle: "webGrid", headerStyle: "header",
 alternatingRowStyle: "alt",
 columns: grid.Columns(
     grid.Column("DoctorFullName", "Doctor Name", canSort: true, style: "person"),
+    
     grid.Column("DocEmail", "Email", canSort: false,
                     format: (item) => (item.DocEmail != null) ?
                             Html.Raw("<img src='../Images/mail.png' alt='mail'/>")
                             : Html.Raw("<img src='../Images/emailnotfound.png' alt='emailnotfound'/>")),
+                            
     grid.Column("Sex", "Sex", canSort: false),
+    
     grid.Column(header: null, canSort: false,
                     format: @<text>@Ajax.ActionLink("Select", "Details",
                            new { Docid = @item.DocID },
-                           new CareForU.Models.BaseClasses.BaseAjax("UpDateDetails", "GET", null))
-    </text>),
-    grid.Column(header:"Delete",
-                    format:@<text>
-                    <a href="@Url.Action("Index")" 
-                    onclick="javascript:return ConfirmDelete('@item.DoctorFullName');" > 
-                    <img src="../../Images/deletedoc.png" alt="Delete Doc" />
-                    </a>
-    
-    </text>)
-    ))
+                           new CareForU.Models.BaseClasses.BaseAjax("UpDateDetails", "GET", null, 10000, "loader"),
+                           new { @class = "OpenDialog" })
+                           </text>),
 
+    grid.Column(header: "Delete",
+                    format: @<text> <a href="@Url.Action("Index")" 
+                    onclick="javascript:return ConfirmDelete('@item.DoctorFullName');" >
+                        <img src="../../Images/deletedoc.png" alt="Delete Doc" />
+                    </a>
+</text>)
+    ))
 @section scripts
 {
     <script type="text/javascript">
 
-    function ConfirmDelete(name)
-    {
-    return confirm("Are you sure you want to delete Dr."+name);
-    }
-//        function UpdateGrid() { 
-//        @Html.Raw(HttpUtility.HtmlDecode(grid.GetContainerUpdateScript("/?Docid=" + (grid.PageIndex)).ToString()))
-//        }
-//    </script>
+        function ConfirmDelete(name) {
+            return confirm("Are you sure you want to delete Dr." + name);
+        }
+        //        function UpdateGrid() { 
+        //        @Html.Raw(HttpUtility.HtmlDecode(grid.GetContainerUpdateScript("/?Docid=" + (grid.PageIndex)).ToString()))
+        //        }
+        //    </script>
 }
 <div id="UpDateDetails">
+    <img id="loader" src="../../Images/loader.gif" alt="" style="display:none;" />
 </div>
 @*<a href="@Url.Action("Details",new {Docid="2"})">
     <img src="../../Images/fb.jpeg" alt="" />
                     (item) => (item.DocEmail ?? "Not Available")
-</a>
-*@
+</a>*@
+
+@*<div id="dialog-modal" title="Doctor Details"/>*@

@@ -9,12 +9,14 @@ namespace CareForU.Models.BaseClasses
     public class BaseAjax : AjaxOptions
     {
 
-        public BaseAjax(string UpdateTargetID,string Method,string _OnSuccess)
+        public BaseAjax(string UpdateTargetID, string Method, string _OnSuccess,int LoadingDuration,string LoadingElementID)
         {
             UpdateTargetId = UpdateTargetID;
             HttpMethod = Method;
             InsertionMode = InsertionMode.Replace;
             OnSuccess = _OnSuccess;
+            LoadingElementDuration = LoadingDuration;
+            LoadingElementId = LoadingElementID;
         }
     }
 }

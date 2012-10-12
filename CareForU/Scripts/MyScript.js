@@ -11,4 +11,21 @@ $(document).ready(function () {
         //location.href = '/Details/' + $(this).find('td:last').text();
     });
 
+
+    $("#dialog-modal").dialog({
+        autoOpen: false,
+        modal: true,
+        height: 200,
+        width: 500,
+        resizable: true       
+
+    });
+
+    $('.OpenDialog').click(function () {
+        //$('#dialog-modal').dialog("open");
+        $('#dialog-modal').dialog("open");
+        return false;
+
+    });
+
 });

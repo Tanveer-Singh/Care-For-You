@@ -7,8 +7,8 @@ $(document).ready(function () {
     $('#gvTheGrid tbody tr').live('hover', function () {
         $(this).toggleClass('clickable');
     }).live('click', function () {
-        location.href = '/Details/' + $(this).find('td:last').text();
+        var name = $(this).find('td:first').text();
+        //location.href = '/Details/' + $(this).find('td:last').text();
     });
-  
-    
+
 });

@@ -9,5 +9,6 @@ namespace CareLib.Repository
     {
 
         List<CareLib.ViewModel.DoctorViewModel> getAllDoctors();
+        CareLib.Models.DoctorDetail GetDoctorDetailsByID(int DocID);
     }
 }

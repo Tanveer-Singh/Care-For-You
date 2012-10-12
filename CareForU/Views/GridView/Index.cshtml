@@ -5,12 +5,13 @@
                                 rowsPerPage: 5, selectionFieldName: "SelectedRow");
 
 }
+@*default width webgrid-513px*@
 <style type="text/css">
     .webGrid
     {
         margin: 4px;
         border-collapse: collapse;
-        width: 513px;
+        width: 713px;
         z-index: 0;
     }
     .header
@@ -24,7 +25,7 @@
     {
         border: 1px solid #C0C0C0;
         padding: 5px;
-        height: 10px;
+        height: 1px;
     }
     .alt
     {
@@ -67,8 +68,7 @@
         </td>
     </tr>
 </table>
-@*</div>*@
-<div style="height: 120px; width: 540px; overflow: auto;">
+<div style="height: 120px; width: 540px; overflow: auto;">    </div>
     @*<div id='table-container'>*@
     @grid.GetHtml(htmlAttributes: new { id = "gvTheGrid" },
 tableStyle: "webGrid", headerStyle: "header",
@@ -76,11 +76,42 @@ alternatingRowStyle: "alt",
 columns: grid.Columns(
     grid.Column("DoctorFullName", "Doctor Name", canSort: true, style: "person"),
     grid.Column("DocEmail", "Email", canSort: false,
-                format: (item) => (item.DocEmail ?? "Not Available")),
+                    format: (item) => (item.DocEmail != null) ?
+                            Html.Raw("<img src='../Images/mail.png' alt='mail'/>")
+                            : Html.Raw("<img src='../Images/emailnotfound.png' alt='emailnotfound'/>")),
     grid.Column("Sex", "Sex", canSort: false),
     grid.Column(header: null, canSort: false,
-                format: @<text>@Html.ActionLink("Select", "Index", new { id = @item.DocID })</text>)))
-    @*                </div>      *@
+                    format: @<text>@Ajax.ActionLink("Select", "Details",
+                           new { Docid = @item.DocID },
+                           new CareForU.Models.BaseClasses.BaseAjax("UpDateDetails", "GET", null))
+    </text>),
+    grid.Column(header:"Delete",
+                    format:@<text>
+                    <a href="@Url.Action("Index")" 
+                    onclick="javascript:return ConfirmDelete('@item.DoctorFullName');" > 
+                    <img src="../../Images/deletedoc.png" alt="Delete Doc" />
+                    </a>
+    
+    </text>)
+    ))
+
+@section scripts
+{
+    <script type="text/javascript">
+
+    function ConfirmDelete(name)
+    {
+    return confirm("Are you sure you want to delete Dr."+name);
+    }
+//        function UpdateGrid() { 
+//        @Html.Raw(HttpUtility.HtmlDecode(grid.GetContainerUpdateScript("/?Docid=" + (grid.PageIndex)).ToString()))
+//        }
+//    </script>
+}
+<div id="UpDateDetails">
 </div>
-
-
+@*<a href="@Url.Action("Details",new {Docid="2"})">
+    <img src="../../Images/fb.jpeg" alt="" />
+                    (item) => (item.DocEmail ?? "Not Available")
+</a>
+*@

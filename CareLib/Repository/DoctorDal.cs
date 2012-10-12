@@ -68,5 +68,12 @@ namespace CareLib.Repository
             return getallDocs;
 
         }
+
+
+        public DoctorDetail GetDoctorDetailsByID(int DocID)
+        {
+            var DoctorDetails = _db.DoctorDetails.SingleOrDefault(x => x.docid == DocID);
+            return DoctorDetails;
+        }
     }
 }

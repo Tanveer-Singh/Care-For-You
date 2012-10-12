@@ -24,5 +24,21 @@ namespace CareForU.Controllers
             return View();
         }
 
+        public ActionResult Details(int Docid = 0)
+        {
+            var DocDetails = (Docid > 0) ? _careDB.GetDoctorDetailsByID(Docid) : null;
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Details", DocDetails);
+                //return View(DocDetails);
+            }
+            else
+            {
+                return View(DocDetails);
+            }
+ 
+        }
+
+
     }
 }

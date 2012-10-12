@@ -85,6 +85,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BaseClasses\BaseAjax.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,9 +176,12 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\chris.JPG" />
+    <Content Include="Images\deletedoc.png" />
+    <Content Include="Images\emailnotfound.png" />
     <Content Include="Images\fb.jpeg" />
     <Content Include="Images\Joan.jpg" />
     <Content Include="Images\linkedin.png" />
+    <Content Include="Images\mail.png" />
     <Content Include="Images\nophoto.jpg" />
     <Content Include="Images\twiiter.jpeg" />
     <Content Include="Images\Victorjpg.jpg" />
@@ -243,6 +247,8 @@
     <Content Include="Views\Contact\EditorTemplates\ContantUsEdit.cshtml" />
     <Content Include="Views\Contact\ContantUs.cshtml" />
     <Content Include="Views\GridView\Index.cshtml" />
+    <Content Include="Views\GridView\_Details.cshtml" />
+    <Content Include="Views\GridView\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
